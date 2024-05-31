@@ -1,0 +1,68 @@
+By default, the application starts in all modes (mentioned below) selected - you can freely disable (or enable) them during the session.
+
+FILE OPERATIONS
+- New: opens "new" window - clears canvas and resets file where the graph is going to be saved (Untilted) - before clearing canvas, user is asked whether he wants to save session
+- Save: saves current session into file, which has user previously chosen - if user has not specified file where the graph is going to be saved, Save As functionality is called instead
+- Open: provides window for user to choose .txt file representing graph, afterwards loads the graph onto canvas; before that asks user if he wants to save session
+- Save As: provides window for user to choose .txt file where his graph is to be saved (or creates new one)
+- Exit: exits the main application
+
+MODE CHANGE
+- for adding vertices: Click on option "Mode" in menu bar on top of the window and select "Insert vertex" mode
+- for deleting vertices: Click on option "Mode" in menu bar on top of the window and select "Delete nodes" mode
+- for adding edges: Click on option "Mode" in menu bar on top of the window and select "Add edges" mode
+- for deleting edges: Click on option "Mode" in menu bar on top of the window and select "Add edges" mode
+-- currently chosen modes are listed on top of canvas in the label "Mode(s) selected"
+
+LAST ACTION
+- in left bottom of the canvas, there is Label "Last Action" -- label shows last action made by the user, whether it is adjusting vertices, adding/deleting nodes (successfully or unsuccessfully), adding or removing edges (successfully or unsuccessfully), generating random graph or clearing the canvas (removing the whole graph)
+
+SHORTCUTS (BINDINGS):
+CTRL + N -> Open new window
+CTRL + M -> Open manual
+CTRL + S -> Save current session
+CTRL + SHIFT + S -> Save current session as (choose file)
+ALT + F4 -> Exit application
+
+INSERT VERTICES MODE
+- user types in value of Vertex to be added in the textfield and clicks "Add vertex" button (or presses ENTER when in the textfield) - afterwards, vertex is placed to random place in canvas
+- rules:
+1. Can not add vertices with value that is already used in other vertex in the canvas.
+2. Can not add vertices with no values (empty string).
+
+DELETE VERTICES MODE
+- user types in value of Vertex to be deleted and clicks "Delete vertex" button (or presses ENTER when in the textfield) - afterwards, added vertex with specified value is deleted
+- rules:
+1. Can not delete vertices with no specified value.
+2. Can not delete vertices that are not present in the canvas.
+- extra functionality: if there are edges coming from vertex that is being deleted, edges coming from the said vertex are removed as well
+
+ADD EDGES MODE
+- user types in value of Vertex from which edge is to be made and value of Vertex where the edge is supposed to end and clicks "Add Edge" button (or presses ENTER when in textfield) - afterwards, edge between specified vertices is added
+- rules:
+1. Can not add edge between vertices with no specified value.
+2. Can not add edge between vertices when there already exists edge between them.
+3. Can not add loop edges (edge from vertex to itself).
+4. Can not add edges between vertices that are not present in the canvas.
+
+REMOVE EDGES MODE
+- user types in values of Vertices that form an edge which is made to be removed and clicks "Remove Edge" button (or presses ENTER when in textfield) - afterwards, edge between specified vertices is removed
+- rules:
+1. Can not remove edge between vertices that are not present in the canvas.
+2. Can not remove edge that is not present in the canvas.
+3. Can not remove edge that represents loop, because we do not allow loops in this application.
+
+RANDOM GRAPH 
+- on the bottom right of the screen, there is "Random Graph" button - after clicking it, random graph consisting of (random number from interval <3, 10>) vertices is made and (random number from <max - numOfVertices, max> edges is made, where max is max number of vertices
+
+CLEAR CANVAS 
+- removes all vertices and edges from the graph
+
+CUSTOMIZATION
+- in the application, we provide some customizations (appliable to current session only (yet)):
+1. Theme - Light Mode/Dark Mode
+2. Vertex Customization - user can choose new color of vertex (circle), font of text value of the vertex, size of text value of the vertex and radius of the vertex (circle)
+3. Edge Customization - user can choose new color of edge (line) and width of the edge
+
+HELP 
+- provides user to open manual
